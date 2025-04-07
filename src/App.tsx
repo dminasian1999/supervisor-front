@@ -8,7 +8,8 @@ function App() {
 
 
     const fetchSupervisors = async () => {
-        const res = await fetch(`http://localhost:8080/supervisors`);
+        const res = await fetch(`https://supervisor-back.onrender.com/supervisors`);
+        // const res = await fetch(`http://localhost:8080/supervisors`);
         if (!res.ok) {
             throw new Error(`Failed to fetch supervisors`)
         }
@@ -20,7 +21,8 @@ function App() {
             return;
         }
 
-        fetch("http://localhost:8080/supervisors/notify", {
+        // fetch("http://localhost:8080/supervisors/notify", {
+        fetch("https://supervisor-back.onrender.com/supervisors/notify", {
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({firstName, lastName, email}),
