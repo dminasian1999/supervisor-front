@@ -25,7 +25,13 @@ function App() {
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({firstName, lastName, email}),
         })
-            .then(() => alert("Notification sent"))
+            .then(() => alert(
+                `Notification sent
+                 First name: ${firstName}
+                 Last name: ${lastName}
+                 Email: ${email}`
+            ))
+
             .catch(() => alert("Error sending notification"));
     };
 
@@ -68,7 +74,7 @@ function App() {
                             <td className="d-flex justify-content-center">
                                 <button
                                     className="btn btn-outline-primary btn-sm me-2 fa fa-envelope"
-                                    onClick={() => handleNotify(s.firstName, s.lastName, `${s.firstName+s.lastName+s.id}@gmail.com`)}
+                                    onClick={() => handleNotify(s.firstName, s.lastName, `${s.firstName + s.lastName + s.id}@gmail.com`)}
                                     title="Notify">
                                 </button>
 
